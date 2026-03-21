@@ -78,7 +78,7 @@ async def bot_ative(ctx, member: discord.Member):
 
 @bot.command()
 async def commands(ctx):
-    await ctx.send("Comandos disponíveis: $hello, $heh (quantidade), $jogo, $boloChocolate, $boloCenoura, $boloBanana, $boloFuba, $clear (quantidade), $commands, $timeout (membro) (tempo), $untimeout (membro), $kick (membro) (motivo), $ban (membro) (motivo), $unban (membro), $newmod (membro), $removemod (membro)")
+    await ctx.send("Comandos disponíveis: $hello, $heh (quantidade), $jogo, $boloChocolate, $boloCenoura, $boloBanana, $boloFuba, $clear (quantidade), $commands, $timeout (membro) (tempo), $untimeout (membro), $kick (membro) (motivo), $ban (membro) (motivo), $unban (membro), $newmod (membro), $removemod (membro), $meme")
 
 @bot.command()
 async def timeout(ctx, membro: discord.Member, tempo: int):
@@ -197,9 +197,10 @@ async def removemod(ctx, membro: discord.Member):
 
     else:
         await ctx.send("Você não tem o cargo necessário para usar este comando, pelo menos não com este usuário", delete_after=3)
-img = random.choice(lista)
+
 @bot.command()
 async def meme(ctx):
+    img = random.choice(lista)
     with open('images/' + img, 'rb') as f:
         #Vamos armazenar o arquivo convertido da biblioteca do Discord nesta variável!
         picture = discord.File(f)
